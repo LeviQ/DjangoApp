@@ -8,6 +8,7 @@ class ToDoList(models.Model):
 
 class Item(models.Model):
     todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
+    description = models.CharField(max_length=500,default='')
     text = models.CharField(max_length=300)
     complete = models.BooleanField()
 
