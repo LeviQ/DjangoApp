@@ -1,17 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ToDoList, Item
-
-def other(response, name):
-    ls = ToDoList.objects.get(name = name)
-    item = ls.item_set.get(id = 0)
-    return HttpResponse("<h1>%s</h1><br></br><p>%s</p>" %(ls.name, str(item.text)))
+from .forms import CreateNewList
 
 def home(response):
-    return render(response,'main/base.html',{})
+    return render(response,'main/home.html',{})
 
 def itemsList(response):
-    return HttpResponse("<h1>Items List</h1>")
+    list = ToDoList.objects.get(id=3)    
+    return render(response,'main/items.html',{"list":list})
 
 def itemDetails(response,id):
-    return HttpResponse(f"<h1>Item Details: {id}</h1>")
+    return render(response, 'main/item_details.html',{"item":id})
+
+def createItem(response):
+    form = CreateNewList()
+    return render(response,"main/create_item.html",{"form":form})

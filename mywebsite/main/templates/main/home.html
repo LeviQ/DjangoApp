@@ -1,1 +1,24 @@
-{% extend 'main/base.html' %}
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- Title Section -->
+{% block title %}
+Home Page
+{% endblock %}
+
+<!-- Head Section -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'main\home.css' %}">
+{% endblock %}
+
+<!-- Content Section -->
+{% block content %}
+
+<div class="phrase">
+    Here you can add you ToDo items, not to forget about them in the future.
+</div>
+<div >
+    <button class="btn">List Items</button>
+    <button class="btn">Add Item</button>
+</div>
+{% endblock %}

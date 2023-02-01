@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+<!-- Title Section -->
+
+{% block title %}
+Create Item
+{% endblock %}
+
+<!-- Content Section -->
+{% block content %}
+<h1> Create Item </h1>
+<form method="post" action="/items/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit", name="save"> Create New </button>
+</form>
+{% endblock %}

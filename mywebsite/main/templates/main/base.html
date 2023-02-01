@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home Page</title>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
         <meta charset="UTF-8">
+        <style>  
+            .phrase{
+                text-align: center;
+                font-size: 15px;            
+            }        
+        </style>
+        {% block head %}
+    
+        {% endblock%}
     </head>
-    <style>  
-        .phrase{
-            text-align: center;
-            font-size: 15px;            
-        }
-    </style>
+    
     <body>
-        <div class="phrase">
-            Here you can add you ToDo items, not to forget about them in the future.
-        </div>
+        {% block content %}
+        {% endblock %}
     </body>
 </html>
