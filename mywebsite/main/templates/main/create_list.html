@@ -11,8 +11,8 @@ Create List
 
 {% block navbar %}
 <div class="navbar-title">ToDo List</div>
-<div class="navbar-phrase">
-    Create New List
+<div class="navbar-phrase-create_list">
+    Create A New List
 </div>
 {% endblock %}
 
@@ -24,9 +24,10 @@ Create List
 <form method="post" action="/items/">
     {% csrf_token %}
     {{form}}
-    <button type="submit", name="save"> Create New </button>
+    <button type="submit", name="save" class = "btn"> Create New </button>
 </form>
 {% endblock %}
+
 
 {% block right-side-content %}
 {% endblock %}
