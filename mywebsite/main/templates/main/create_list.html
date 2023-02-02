@@ -1,17 +1,31 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}
-Create New List
+Create List
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'create_list.css' %}">
 {% endblock %}
 
 {% block navbar %}
-Create New ToDo List
+<div class="navbar-title">ToDo List</div>
+<div class="navbar-phrase">
+    Create New List
+</div>
 {% endblock %}
 
 {% block left-side-content %}
+
 {% endblock %}
 
 {% block middle-side-content %}
+<form method="post" action="/items/">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit", name="save"> Create New </button>
+</form>
 {% endblock %}
 
 {% block right-side-content %}

@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from . import views
 
@@ -10,3 +11,5 @@ urlpatterns = [
     path("lists/",views.lists,name="lists"),
     path("lists/create/",views.createList,name="create list")
 ]
+
+urlpatterns += staticfiles_urlpatterns()

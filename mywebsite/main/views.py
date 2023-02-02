@@ -21,4 +21,5 @@ def lists(response):
     return render(response,"main/lists.html",{})
 
 def createList(response):
-    return render(response,"main/create_list.html",{})
+    form = CreateNewList()
+    return render(response,"main/create_list.html",{"form":form})
