@@ -8,17 +8,40 @@ Home Page
 
 <!-- Head Section -->
 {% block head %}
-<link rel="stylesheet" href="{% static 'main\home.css' %}">
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+<!-- Navbar Section -->
+{% block navbar %}    
+    <div class="navbar-phrase">
+        You Will Never Forget About Your Tasks Again
+    </div>
 {% endblock %}
 
 <!-- Content Section -->
-{% block content %}
+{% block left-side-content %}
 
-<div class="phrase">
-    Here you can add you ToDo items, not to forget about them in the future.
-</div>
-<div >
-    <button class="btn">List Items</button>
-    <button class="btn">Add Item</button>
-</div>
 {% endblock %}
+
+{% block middle-side-content %}
+
+<form method="post" action="/lists/">
+    {% csrf_token %}
+    <button type="submit">
+        List Your Chores
+    </button>
+</form>
+<form method="post" action="/lists/create/">
+    {% csrf_token %}
+    <button type="submit">
+        Create New List
+    </button>
+</form>
+
+
+{% endblock %}
+
+{% block right-side-content %}
+
+{% endblock %}
+

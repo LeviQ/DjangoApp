@@ -16,3 +16,9 @@ def itemDetails(response,id):
 def createItem(response):
     form = CreateNewList()
     return render(response,"main/create_item.html",{"form":form})
+
+def lists(response):
+    return render(response,"main/lists.html",{})
+
+def createList(response):
+    return render(response,"main/create_list.html",{})

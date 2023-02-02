@@ -7,18 +7,50 @@
         </title>
         <meta charset="UTF-8">
         <style>  
-            .phrase{
-                text-align: center;
-                font-size: 15px;            
-            }        
+            *{
+                box-sizing: border-box;
+            }
+            .navbar{
+                height: auto;
+                text-align: center;                            
+            }  
+            .content-row{     
+                margin-top: 5%;                           
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;                
+            } 
+            .column{
+                text-align: center;                
+            }
+            .navbar-title{
+                padding-top: 50px;
+                font-size: 25px;
+            }
         </style>
         {% block head %}
     
-        {% endblock%}
+        {% endblock %}
     </head>
     
     <body>
-        {% block content %}
-        {% endblock %}
+        <div class="navbar">
+            <div class="navbar-title">ToDo List</div>
+            {% block navbar %}
+            {% endblock %}
+        </div>
+        <div class="content-row">
+            <div class="column">
+                {% block left-side-content %}
+                {% endblock %}
+            </div>
+            <div class="column">
+                {% block middle-side-content %}
+                {% endblock %}
+            </div>
+            <div class="column">
+                {% block right-side-content %}
+                {% endblock %}
+            </div>
+        </div>        
     </body>
 </html>
