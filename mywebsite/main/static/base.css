@@ -1,0 +1,91 @@
+*{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+form{    
+    margin: 3%; 
+    display: inline;
+}
+
+.navbar{
+    height: auto;
+    text-align: center;                    
+}  
+.content-row{     
+    margin-top: 5%;                           
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;                
+} 
+.column{
+    text-align: center;                
+}
+.navbar-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 50px 0;
+    color: #333;
+}
+
+.navbar-phrase{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid gray;
+}
+
+.btn{
+    background: linear-gradient(to bottom, blue, darkblue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px gray;
+}
+
+.btn2{
+    background: linear-gradient(to bottom, green, darkgreen);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px gray;
+}
+
+.footer {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 93vh;
+    width: 99%;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}

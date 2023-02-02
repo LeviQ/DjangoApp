@@ -1,3 +1,5 @@
+{%load static%} 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,29 +8,10 @@
             {% endblock %}
         </title>
         <meta charset="UTF-8">
-        <style>  
-            *{
-                box-sizing: border-box;
-            }
-            .navbar{
-                height: auto;
-                text-align: center;                            
-            }  
-            .content-row{     
-                margin-top: 5%;                           
-                display: grid;
-                grid-template-columns: 1fr 2fr 1fr;                
-            } 
-            .column{
-                text-align: center;                
-            }
-            .navbar-title{
-                padding-top: 50px;
-                font-size: 25px;
-            }
+        <style >  
         </style>
+        <link rel="stylesheet" href="{% static 'base.css' %}">
         {% block head %}
-    
         {% endblock %}
     </head>
     
@@ -51,6 +34,15 @@
                 {% block right-side-content %}
                 {% endblock %}
             </div>
-        </div>        
+        </div> 
+        
+        
+        <footer class="footer">
+            <div class="container">
+              <p class="text-center text-muted">&copy; 2023 ToDoList App</p>
+            </div>
+        </footer>
+
+
     </body>
 </html>

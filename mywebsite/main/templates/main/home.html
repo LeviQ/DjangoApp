@@ -8,14 +8,14 @@ Home Page
 
 <!-- Head Section -->
 {% block head %}
-<link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock %}
 
 <!-- Navbar Section -->
-{% block navbar %}    
+{% block navbar %}
     <div class="navbar-phrase">
         You Will Never Forget About Your Tasks Again
     </div>
+    <hr>    
 {% endblock %}
 
 <!-- Content Section -->
@@ -27,17 +27,16 @@ Home Page
 
 <form method="post" action="/lists/">
     {% csrf_token %}
-    <button type="submit">
+    <button type="submit" class = "btn">
         List Your Chores
     </button>
 </form>
 <form method="post" action="/lists/create/">
     {% csrf_token %}
-    <button type="submit">
+    <button type="submit" class = "btn2">
         Create New List
     </button>
 </form>
-
 
 {% endblock %}
 
