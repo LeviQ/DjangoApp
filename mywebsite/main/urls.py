@@ -4,7 +4,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 urlpatterns = [    
-    path("",views.home,name="home"),        
+    path("",views.home,name="home"), 
+    path("home/",views.home,name="home"),        
     path("lists/",views.lists,name="lists"),
     path("list/create/",views.createList,name="create list"),
     path("list/<str:list_name>/",views.createItem,name="list items"),
