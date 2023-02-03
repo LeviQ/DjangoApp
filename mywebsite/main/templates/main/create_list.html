@@ -21,7 +21,7 @@ Create List
 {% endblock %}
 
 {% block middle-side-content %}
-<form method="post" action="/items/">
+<form method="post" action="/list/create/">
     {% csrf_token %}
     {{form}}
     <button type="submit", name="save" class = "btn"> Create New </button>

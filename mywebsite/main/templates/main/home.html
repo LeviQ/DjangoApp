@@ -26,13 +26,13 @@ Home Page
 
 {% block middle-side-content %}
 
-<form method="post" action="/lists/">
+<form method="get" action="/lists/">
     {% csrf_token %}
     <button type="submit" class = "btn">
         List Your Chores
     </button>
 </form>
-<form method="post" action="/lists/create/">
+<form method="get" action="/list/create/">
     {% csrf_token %}
     <button type="submit" class = "btn2">
         Create New List

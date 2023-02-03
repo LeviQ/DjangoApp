@@ -9,7 +9,7 @@ urlpatterns = [
     path("items/<int:id>/",views.itemDetails,name="item details"),
     path("items/create/",views.createItem,name="create item"),
     path("lists/",views.lists,name="lists"),
-    path("lists/create/",views.createList,name="create list")
+    path("list/create/",views.createList,name="create list")
 ]
 
 urlpatterns += staticfiles_urlpatterns()
