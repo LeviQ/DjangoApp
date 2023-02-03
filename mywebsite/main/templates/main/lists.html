@@ -1,17 +1,33 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}
+<link charset="stylesheet" href="{% static 'main/lists.css' %}">
+{% endblock %}
 
 {% block title %}
 ToDo Lists
 {% endblock %}
 
 {% block navbar %}
+<div class="navbar-title">ToDo List</div>
+<div class="navbar-phrase-create_list">
+    Created ToDo Lists
+</div>
 {% endblock %}
 
 {% block left-side-content %}
 {% endblock %}
 
-{% block middle-side-content %}
-All Created Lists
+{% block middle-side-content %}    
+    <ul>
+        {% for list in lists %}
+        <li>{{list.name}}
+            <button>Przeglądaj</button>            
+            <button>Usuń</button>
+        </li>        
+    {% endfor %}
+    </ul>
 {% endblock %}
 
 {% block right-side-content %}

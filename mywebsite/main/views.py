@@ -18,7 +18,8 @@ def createItem(response):
     return render(response,"main/create_item.html",{"form":form})
 
 def lists(response):
-    return render(response,"main/lists.html",{})
+    lists = ToDoList.objects.all()    
+    return render(response,"main/lists.html",{"lists":lists})
 
 def createList(response):
     if response.method == "POST":
