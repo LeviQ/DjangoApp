@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link charset="stylesheet" href="{% static 'main/lists.css' %}">
+<link rel="stylesheet" href="{% static 'lists.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -20,24 +20,27 @@ ToDo Lists
 {% endblock %}
 
 {% block middle-side-content %}    
-    <ul>
+    <table>
         {% for list in lists %}
-        <li>{{list.name}}
-            <form method="get" action="/list/{{list.name}}">
-                {% csrf_token %}
-                <button type="submit" class = "btn">
-                    List
-                </button>
-            </form>
-            <form method="get" action="/list/{{list.name}}/delete">
-                {% csrf_token %}
-                <button type="submit" class = "btn2">
-                    Delete
-                </button>
-            </form>            
-        </li>        
+        <tbody>
+            <tr>
+                <td class = "list_name">{{list.name}}</td>
+                <td><form method="get" action="/list/{{list.name}}">
+                    {% csrf_token %}
+                    <button type="submit" class = "btn4">
+                        List
+                    </button>
+                </form></td>
+                <td><form method="get" action="/list/{{list.name}}/delete">
+                    {% csrf_token %}
+                    <button type="submit" class = "btn3">
+                        Delete
+                    </button>
+                </form></td>   
+            </tr>     
+        </tbody>   
     {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
 
 {% block right-side-content %}

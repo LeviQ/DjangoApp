@@ -1,11 +1,60 @@
-.navbar-phrase{
-    margin-top: 5%;    
-    font-size: 40px;
+table {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
-.navbar-title{
-    padding-top: 10%;
-    font-size: 40px;
+
+td {
+    padding: 15px;
 }
-button{
-    display: inline;
+  
+tr button {
+    width: 70%;
 }
+
+.list_name{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;;
+    font-size: 20px;
+}
+
+.btn3 {
+    background: linear-gradient(to bottom,  #db2215, #f80303);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+.btn3:hover {
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+    transform: scale(1.2);
+  }
+
+  .btn4 {
+    background: linear-gradient(to bottom,  #048bca, #0040ff);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+.btn4:hover {
+    cursor: pointer;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+    transform: scale(1.2);
+  }
