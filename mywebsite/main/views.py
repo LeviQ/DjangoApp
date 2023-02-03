@@ -32,3 +32,4 @@ def createList(response):
     else:
         form = CreateNewList()
         return render(response,"main/create_list.html",{"form":form})
+
