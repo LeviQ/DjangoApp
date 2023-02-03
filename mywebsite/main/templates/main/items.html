@@ -25,7 +25,7 @@ List Items Page
 
     <ul>
         {% for item in list.item_set.all %}
-            <li>Name: {{item.text}} Completed: {{item.complete}}</li>
+            <li>Name: {{item.text}} Description: {{item.description}} Completed: {{item.complete}}</li>
         {% endfor %}        
     </ul>    
 
