@@ -23,8 +23,18 @@ ToDo Lists
     <ul>
         {% for list in lists %}
         <li>{{list.name}}
-            <button>Przeglądaj</button>            
-            <button>Usuń</button>
+            <form method="get" action="/list/{{list.name}}">
+                {% csrf_token %}
+                <button type="submit" class = "btn">
+                    List
+                </button>
+            </form>
+            <form method="get" action="/list/{{list.name}}/delete">
+                {% csrf_token %}
+                <button type="submit" class = "btn2">
+                    Delete
+                </button>
+            </form>            
         </li>        
     {% endfor %}
     </ul>

@@ -1,15 +1,27 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 <!-- Title Section -->
 {% block title %}
-Items List Page
+List Items Page
 {% endblock %}
 
+{% block head %}
+<link charset="stylesheet" href="{% static 'main/items.css' %}">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar-title">ToDo List</div>
+<div class="navbar-phrase-create_list">
+    Items For: {{list.name}}
+</div>
+{% endblock %}
 
 <!-- Content Section-->
-{% block middle-side-content %}
+{% block left-side-content %}
+{% endblock %}
 
-    <h1>{{list.name}}</h1>
+{% block middle-side-content %}    
 
     <ul>
         {% for item in list.item_set.all %}
@@ -17,4 +29,7 @@ Items List Page
         {% endfor %}        
     </ul>    
 
+{% endblock %}
+
+{% block right-side-content %}
 {% endblock %}

@@ -6,8 +6,8 @@ from .forms import CreateNewList
 def home(response):
     return render(response,'main/home.html',{})
 
-def itemsList(response):
-    list = ToDoList.objects.get(id=3)    
+def itemsList(response,name):
+    list = ToDoList.objects.get(name=name)    
     return render(response,'main/items.html',{"list":list})
 
 def itemDetails(response,id):
