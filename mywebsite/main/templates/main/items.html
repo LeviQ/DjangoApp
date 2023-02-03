@@ -19,13 +19,30 @@ List Items Page
 
 <!-- Content Section-->
 {% block left-side-content %}
+<form method="get" action="/lists/">
+    {% csrf_token %}
+    <button type="submit">
+        Return 
+    </button>
+</form>
 {% endblock %}
 
 {% block middle-side-content %}    
-
+    <form method="post" action="/list/{{list.name}}/item/create/">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">
+            Create
+        </button>
+    </form>
     <ul>
         {% for item in list.item_set.all %}
-            <li>Name: {{item.text}} Description: {{item.description}} Completed: {{item.complete}}</li>
+            <li>Name: {{item.text}} Description: {{item.description}} Completed: {{item.complete}}                
+                <form method="get" action="/list/{{list.name}}/{{item.text}}/delete/">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
         {% endfor %}        
     </ul>    
 

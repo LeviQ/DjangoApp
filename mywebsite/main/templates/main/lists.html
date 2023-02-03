@@ -17,6 +17,12 @@ ToDo Lists
 {% endblock %}
 
 {% block left-side-content %}
+    <form method="get" action="../">
+        {% csrf_token %}
+        <button type="submit">
+            Return 
+        </button>
+    </form>
 {% endblock %}
 
 {% block middle-side-content %}    
@@ -25,13 +31,13 @@ ToDo Lists
         <tbody>
             <tr>
                 <td class = "list_name">{{list.name}}</td>
-                <td><form method="get" action="/list/{{list.name}}">
+                <td><form method="get" action="/list/{{list.name}}/">
                     {% csrf_token %}
                     <button type="submit" class = "btn4">
                         List
                     </button>
                 </form></td>
-                <td><form method="get" action="/list/{{list.name}}/delete">
+                <td><form method="post" action="/list/{{list.name}}/delete/">
                     {% csrf_token %}
                     <button type="submit" class = "btn3">
                         Delete

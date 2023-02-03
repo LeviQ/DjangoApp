@@ -17,7 +17,12 @@ Create List
 {% endblock %}
 
 {% block left-side-content %}
-
+<form method="get" action="../../">
+    {% csrf_token %}
+    <button type="submit">
+        Return 
+    </button>
+</form>
 {% endblock %}
 
 {% block middle-side-content %}
