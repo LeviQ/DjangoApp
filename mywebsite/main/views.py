@@ -33,3 +33,9 @@ def createList(response):
         form = CreateNewList()
         return render(response,"main/create_list.html",{"form":form})
 
+def deleteList(response, name):
+    list = ToDoList.objects.get(name = name)
+    list.delete()
+    lists = ToDoList.objects.all()
+    return render(response,'main/lists.html',{"lists":lists})
+
