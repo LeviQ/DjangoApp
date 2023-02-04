@@ -7,7 +7,7 @@ List Items Page
 {% endblock %}
 
 {% block head %}
-<link charset="stylesheet" href="{% static 'main/items.css' %}">
+<link rel ="stylesheet" href="{% static 'items.css' %}">
 {% endblock %}
 
 {% block navbar %}
@@ -21,7 +21,7 @@ List Items Page
 {% block left-side-content %}
 <form method="get" action="/lists/">
     {% csrf_token %}
-    <button type="submit">
+    <button type="submit" class = "btn2">
         Return 
     </button>
 </form>
@@ -31,7 +31,7 @@ List Items Page
     <form method="post" action="/list/{{list.name}}/item/create/">
         {% csrf_token %}
         {{form}}
-        <button type="submit">
+        <button type="submit" class = "btn">
             Create
         </button>
     </form>
@@ -40,7 +40,7 @@ List Items Page
             <li>Name: {{item.text}} Description: {{item.description}} Completed: {{item.complete}}                
                 <form method="get" action="/list/{{list.name}}/{{item.text}}/delete/">
                     {% csrf_token %}
-                    <button type="submit">Delete</button>
+                    <button type="submit" class = "btn3"> Delete </button>
                 </form>
             </li>
         {% endfor %}        
