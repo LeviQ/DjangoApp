@@ -31,20 +31,37 @@ List Items Page
     <form method="post" action="/list/{{list.name}}/item/create/">
         {% csrf_token %}
         {{form}}
-        <button type="submit" class = "btn">
+        <button type="submit" class = "btn" style = "margin-left: 15px;">
             Create
         </button>
     </form>
-    <ul>
+
+
+    <table class = "itemstable" style="margin: 0 auto; width: 90%; height: 90%; margin-top: 40px;">
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Description:</th>
+                <th>Completed:</th>
+                <th>Action:</th>
+            </tr>
+        </thead>
         {% for item in list.item_set.all %}
-            <li>Name: {{item.text}} Description: {{item.description}} Completed: {{item.complete}}                
-                <form method="get" action="/list/{{list.name}}/{{item.text}}/delete/">
+            <tbody>
+            <tr>
+                <td>{{item.text}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.complete}}</td>              
+                <td><form method="get" action="/list/{{list.name}}/{{item.text}}/delete/">
                     {% csrf_token %}
                     <button type="submit" class = "btn3"> Delete </button>
-                </form>
-            </li>
+                </form></td>
+            </tr>
+            </tbody>
         {% endfor %}        
-    </ul>    
+    </table>
+    
+    
 
 {% endblock %}
 
